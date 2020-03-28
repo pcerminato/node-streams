@@ -4,7 +4,7 @@ const path = require("path");
 const file = path.resolve(path.join(__dirname, "../files/writable.txt"));
 const stream = fs.createWriteStream(file);
 
-stream.on("close", function close() {
+stream.on("finish", function close() {
   console.log("FINISHED!");
 });
 stream.write("Hey\n");
